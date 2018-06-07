@@ -5,7 +5,7 @@ let meal_cost: Double = 10.25
 let tip_percent = 17
 let tax_percent = 5
 
-
+//solution
 func solve(meal_cost: Double, tip_percent: Int, tax_percent: Int) {
     let tax = meal_cost * Double(tax_percent) / 100.0
     let tip = meal_cost * Double(tip_percent) / 100.0
