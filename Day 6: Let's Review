@@ -1,0 +1,31 @@
+//Day 6: Let's Review
+
+import Foundation
+import Darwin
+
+let numStrings = Int(readLine()!)!
+
+func printEvenAndOdd(string: String) {
+    // This prints inputString to stderr for debugging:
+    fputs("string: " + string + "\n", stderr)
+	
+    // Write your code here
+    var myEvenArray = [Character]()
+    var myOddArray = [Character]()
+    var index = 0
+    for char in string {
+        if index % 2 == 0 {
+            myEvenArray.append(char)
+        } else {
+            myOddArray.append(char)
+        }
+        index += 1
+    } 
+    print("\(String(myEvenArray)) \(String(myOddArray))")
+   
+}
+
+for _ in 1...numStrings {
+    let inputString = readLine()!
+    printEvenAndOdd(string: inputString)
+}
