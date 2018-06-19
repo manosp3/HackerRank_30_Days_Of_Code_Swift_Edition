@@ -1,0 +1,31 @@
+//Day 7: Arrays
+//I beliave this is not the mose efficient solution for the problem, but it works!
+
+import Foundation
+
+guard let n = Int((readLine()?.trimmingCharacters(in: .whitespacesAndNewlines))!)
+else { fatalError("Bad input") }
+
+guard let arrTemp = readLine() else { fatalError("Bad input") }
+let arr: [Int] = arrTemp.split(separator: " ").map {
+    if let arrItem = Int($0.trimmingCharacters(in: .whitespacesAndNewlines)) {
+        return arrItem
+    } else { fatalError("Bad input") }
+}
+
+guard arr.count == n else { fatalError("Bad input") }
+
+var newArr = [Int]()
+var i = 1
+for _ in arr.indices {
+    newArr.append(arr[arr.count - i])
+    i += 1
+}
+
+func getNumbers(array : [Int]) -> String {
+    let stringArray = array.map{ String($0) }
+    return stringArray.joined(separator: " ")
+}
+
+
+print("\(getNumbers(array: newArr))")
